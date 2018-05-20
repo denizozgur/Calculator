@@ -9,12 +9,13 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-   
+    
+    @IBOutlet var keypad: [CustomKeypadButton]!
     //    MARK:  - Properties
     var userIsTyping = false
-
+    
     @IBOutlet weak var calculatorDisplay: UILabel!
-
+    
     private var brain = CalculatorBrain()
     
     var historyOperations : String = ""
@@ -39,6 +40,9 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        for key in keypad {
+            key.corner = 35
+        }
     }
     
     @IBAction func unwindBackToFirstVC(unwindSegue : UIStoryboardSegue) {    }
@@ -54,6 +58,20 @@ class CalculatorViewController: UIViewController {
         }
     }
     
+    @IBAction func customPressAnimation(_ sender: CustomKeypadButton) {
+        let bg = sender.backgroundColor
+        CustomKeypadButton.animate(withDuration: 0.1, animations: {
+            sender.layer.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 1, alpha: 0)
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }) { (_) in
+            CustomKeypadButton.animate(withDuration: 0.05, animations: {
+                sender.transform = CGAffineTransform.identity
+                sender.backgroundColor = bg
+            })
+        }
+        
+        
+    }
     @IBAction func clearAll(_ sender: UIButton) {
         brain = CalculatorBrain()
         userIsTyping = false
@@ -86,6 +104,15 @@ class CalculatorViewController: UIViewController {
     }
 }
 
+class CustomKeypadButton : UIButton {
+  var corner : CGFloat = 0 {        didSet {            self.layer.cornerRadius = self.frame.width / 4      }    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
 // MARK: - Removing zeros from the end of doubles
 extension Double {
     var clean: String {
