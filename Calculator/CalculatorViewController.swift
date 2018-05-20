@@ -9,6 +9,7 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
+   
     //    MARK:  - Properties
     var userIsTyping = false
 
@@ -40,11 +41,6 @@ class CalculatorViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func unwindBackToFirstVC(unwindSegue : UIStoryboardSegue) {    }
     
     @IBAction func digit(_ sender: UIButton) {
@@ -56,7 +52,6 @@ class CalculatorViewController: UIViewController {
             calculatorDisplay.text = digit
             userIsTyping = true
         }
-        
     }
     
     @IBAction func clearAll(_ sender: UIButton) {
@@ -69,7 +64,7 @@ class CalculatorViewController: UIViewController {
     @IBAction func operation(_ sender: UIButton) {
         if userIsTyping{
             brain.setOperand(displayValue)
-            historyOperations.append(String(displayValue))
+            historyOperations.append(displayValue.clean)
             calculatorDisplay.text?.append((sender.titleLabel?.text)!)
             brain.performPendingBinaryOperation()
             userIsTyping = false
@@ -78,14 +73,14 @@ class CalculatorViewController: UIViewController {
         // perform the operation
         if let mathematicalSymbol = sender.currentTitle {
             brain.performOperation(mathematicalSymbol)
-            historyOperations.append(mathematicalSymbol)
+            historyOperations.append(" \(mathematicalSymbol) ")
         }
         
         // update the display if I can
         if let result = brain.result {
-            displayValue = result
+            displayValue = Double(result.clean)!
             brain.setOperand(result)
-            historyOperations.append(String(result))
+            historyOperations.append(String(result.clean))
             historyOperations.append("\n")
         }
     }
