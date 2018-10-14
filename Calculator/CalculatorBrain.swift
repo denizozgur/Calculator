@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 struct CalculatorBrain {
     //    MARK:  - Properties
     private var accumulator : Double?
@@ -16,7 +17,7 @@ struct CalculatorBrain {
             return accumulator
         }
     }
-    
+
     private struct PendingBinaryOperation {
         let function: (Double, Double) -> Double
         let firstOperand: Double
@@ -39,13 +40,13 @@ struct CalculatorBrain {
         //        "e" : Operation.constant(M_E),
         //        "cos" : Operation.unary(cos),
         //        "±" : Operation.unary({ -$0 }),
-        "√" : Operation.unary(sqrt),
-        "×" : Operation.binary({ $0 * $1 }),
-        "÷" : Operation.binary({ $0 / $1 }),
-        "+" : Operation.binary({ $0 + $1 }),
-        "−" : Operation.binary({ $0 - $1 }),
-        "%" : Operation.binary( { ($0 * $1) / 100 }),
-        "=" : Operation.equals
+        "√" : .unary(sqrt),
+        "×" : .binary({ $0 * $1 }),
+        "÷" : .binary({ $0 / $1 }),
+        "+" : .binary({ $0 + $1 }),
+        "−" : .binary({ $0 - $1 }),
+        "%" : .binary( { ($0 * $1) / 100 }),
+        "=" : .equals
     ]
     
     // MARK:  - Function

@@ -41,7 +41,7 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         for key in keypad {
-            key.corner = 35
+            key.corner = 30
         }
     }
     
@@ -80,18 +80,18 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func operation(_ sender: UIButton) {
-        if userIsTyping{
+        if userIsTyping {
             brain.setOperand(displayValue)
             historyOperations.append(displayValue.clean)
             calculatorDisplay.text?.append((sender.titleLabel?.text)!)
             brain.performPendingBinaryOperation()
             userIsTyping = false
+            historyOperations.append(sender.currentTitle!)
         }
         
         // perform the operation
         if let mathematicalSymbol = sender.currentTitle {
             brain.performOperation(mathematicalSymbol)
-            historyOperations.append(" \(mathematicalSymbol) ")
         }
         
         // update the display if I can
