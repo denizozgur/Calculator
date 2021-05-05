@@ -1,10 +1,6 @@
-//
 //  CalculatorBrain.swift
-//  Calculator
-//
 //  Created by Doe on 2/2/18.
 //  Copyright © 2018 Doe. All rights reserved.
-//
 
 import Foundation
 

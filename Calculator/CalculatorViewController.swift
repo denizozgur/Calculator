@@ -40,15 +40,17 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        for key in keypad {
+			for key in keypad {
             key.corner = 30
         }
+		calculatorDisplay.textAlignment = NSTextAlignment.center
     }
     
     @IBAction func unwindBackToFirstVC(unwindSegue : UIStoryboardSegue) {    }
     
     @IBAction func digit(_ sender: UIButton) {
         let digit = sender.currentTitle!
+		calculatorDisplay.textAlignment = NSTextAlignment.right
         if userIsTyping {
             let textCurrentlyInDisplay = calculatorDisplay.text!
             calculatorDisplay.text = textCurrentlyInDisplay + digit

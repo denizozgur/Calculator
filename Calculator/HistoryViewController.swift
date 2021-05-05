@@ -10,7 +10,7 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
-    var passedHistory = " "
+	var passedHistory = " "
     @IBOutlet weak var historyListLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
