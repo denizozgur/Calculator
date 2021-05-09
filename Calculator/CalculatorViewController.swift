@@ -59,14 +59,29 @@ class CalculatorViewController: UIViewController {
 			userIsTyping = true
 		}
 	}
-	
-	@IBAction func customPressAnimation(_ sender: CustomKeypadButton) {
+	@IBAction func operationAnimation(_ sender: CustomKeypadButton) {
 		let bg = sender.backgroundColor
-		CustomKeypadButton.animate(withDuration: 0.1, animations: {
-			sender.layer.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 1, alpha: 0)
-			sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+		CustomKeypadButton.animate(withDuration: 0.2, animations: {
+			sender.layer.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+			sender.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
 		}) { (_) in
-			CustomKeypadButton.animate(withDuration: 0.05, animations: {
+			CustomKeypadButton.animate(withDuration: 0.1, animations: {
+				sender.transform = CGAffineTransform.identity
+				sender.backgroundColor = bg
+			})
+		}
+		
+		
+
+	}
+	
+	@IBAction func keypadAnimation(_ sender: CustomKeypadButton) {
+		let bg = sender.backgroundColor
+		CustomKeypadButton.animate(withDuration: 0.2, animations: {
+			sender.layer.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+			sender.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+		}) { (_) in
+			CustomKeypadButton.animate(withDuration: 0.1, animations: {
 				sender.transform = CGAffineTransform.identity
 				sender.backgroundColor = bg
 			})

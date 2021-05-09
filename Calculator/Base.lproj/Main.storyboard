@@ -43,10 +43,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nUA-ET-zn1">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="93.666666666666671"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="SCr-ql-aBK">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="SCr-ql-aBK" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="93.666666666666671"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.55000000000000004" height="0.55000000000000004"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <state key="normal" image="Reset"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="corner">
@@ -55,9 +56,10 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="clearAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9LT-bL-sbv"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GOZ-LE-dUS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tya-jd-6IO">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tya-jd-6IO" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="99.666666666666686" y="0.0" width="91.333333333333314" height="93.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
@@ -65,10 +67,11 @@
                                                     <color key="titleColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NdT-0L-Nib"/>
                                                     <segue destination="crl-Ja-U6F" kind="presentation" identifier="showHistory" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="KgC-4p-Auu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxm-Uu-BSd">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxm-Uu-BSd" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="199" y="0.0" width="91.666666666666686" height="93.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
@@ -77,9 +80,10 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRL-s3-88E"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ecp-SG-CqT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR8-ug-xav">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR8-ug-xav" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="298.66666666666669" y="0.0" width="91.333333333333314" height="93.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="×">
@@ -87,6 +91,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbC-Pe-bLe"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="phJ-AI-gSA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -107,8 +112,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEe-ta-ngP"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A57-t0-y80"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EEe-ta-ngP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GC3-wD-KPW" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -124,8 +129,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rBI-Xh-rup"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Orq-5b-bS2"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rBI-Xh-rup"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j22-WW-K3L" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -141,11 +146,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stQ-XF-6Pv"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pd7-CP-ilP"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stQ-XF-6Pv"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-Rf-IdR">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-Rf-IdR" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="298.66666666666669" y="0.0" width="91.333333333333314" height="93.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="÷">
@@ -153,6 +158,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yvL-d6-Otp"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cL-RW-dM3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -173,8 +179,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tcD-Wg-WGB"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bvG-xC-udZ"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tcD-Wg-WGB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-km-tpR" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -190,8 +196,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mrq-Lb-omc"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9wF-Og-Ruw"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mrq-Lb-omc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqw-NJ-pMg" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -207,11 +213,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w7U-79-9Mu"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zc5-dv-ddx"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w7U-79-9Mu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeB-TF-uKV">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeB-TF-uKV" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="298.66666666666669" y="0.0" width="91.333333333333314" height="93.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="−">
@@ -219,6 +225,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Sj-K7-c56"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9m-fN-OJN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -239,8 +246,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dOW-OX-PDh"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eEe-IY-c6K"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dOW-OX-PDh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i5-Go-gpL" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -256,8 +263,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1px-TO-5ua"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPe-7j-QV0"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1px-TO-5ua"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-AX-HjI" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -273,11 +280,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLY-dt-q3r"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tZ2-8v-2k3"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLY-dt-q3r"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Op-uS-7Zb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Op-uS-7Zb" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="298.66666666666669" y="0.0" width="91.333333333333314" height="93.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="+">
@@ -285,6 +292,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2r-xj-LZn"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hu6-x1-XSA"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -292,7 +300,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IBf-b3-7QF">
                                         <rect key="frame" x="0.0" y="406.33333333333337" width="390" height="93.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2X-z7-i7x">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2X-z7-i7x" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="93.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
@@ -301,6 +309,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sn7-r7-WW3"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JA9-zW-A40"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-tR-hdL" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
@@ -316,11 +325,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="customPressAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2M-r5-Zvr"/>
                                                     <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NEU-hk-Edq"/>
+                                                    <action selector="keypadAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2M-r5-Zvr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-fH-Qim">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-fH-Qim" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="199" y="0.0" width="91.666666666666686" height="93.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="√">
@@ -328,9 +337,10 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oWr-aX-45W"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7s-4E-wW8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2J-HL-Wja">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2J-HL-Wja" customClass="CustomKeypadButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="298.66666666666669" y="0.0" width="91.333333333333314" height="93.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="=">
@@ -338,6 +348,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="operation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RSg-LT-r5F"/>
+                                                    <action selector="operationAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bip-7e-Moh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -455,6 +466,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Reset" width="22.5" height="22.5"/>
+        <image name="Reset" width="45" height="45"/>
     </resources>
 </document>
