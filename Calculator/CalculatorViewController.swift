@@ -70,7 +70,7 @@ class CalculatorViewController: UIViewController {
 		}
 		
 		
-
+		
 	}
 	
 	@IBAction func keypadAnimation(_ sender: CustomKeypadButton) {
