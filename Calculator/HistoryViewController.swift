@@ -19,7 +19,6 @@ class HistoryViewController: UIViewController {
 		self.view.addGestureRecognizer(swipeLeftgesture)
 		
     }
-	
 
 
     override func didReceiveMemoryWarning() {
