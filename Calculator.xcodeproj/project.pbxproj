@@ -59,12 +59,10 @@
 		D22DA3E52020604100D11CA5 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				D2820A572647DDF200BF29D9 /* Calculator.entitlements */,
 				D22DA3E82020604100D11CA5 /* CalculatorViewController.swift */,
 				D2D78763202E7F1900F71D56 /* HistoryViewController.swift */,
 				D2D79E942024F129001018CF /* CalculatorBrain.swift */,
 				D22DA3EA2020604100D11CA5 /* Main.storyboard */,
-				D22DA3F22020604100D11CA5 /* Info.plist */,
 				D2E9E6F6202571E500227846 /* Support */,
 			);
 			path = Calculator;
@@ -73,6 +71,8 @@
 		D2E9E6F6202571E500227846 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D22DA3F22020604100D11CA5 /* Info.plist */,
+				D2820A572647DDF200BF29D9 /* Calculator.entitlements */,
 				D22DA3E62020604100D11CA5 /* AppDelegate.swift */,
 				D265A1B621624C5D00ABE6E2 /* LaunchScreen.storyboard */,
 				D26BC21821731B8D0043EE04 /* Media.xcassets */,
